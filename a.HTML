@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .ujo1 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            left: 0px;
+            top: 0px;
+            background-color: #ffffff;
+            background-image: url("a8f1.png");
+            background-repeat: repeat;
+            background-size: 400px 400px;
+        }
+        #t8g {
+            position: fixed;
+            width: 500px;
+            height: 70px;
+            left: 0px;
+            top: 0px;
+            background-color: #808080;
+        }
+        .g7aqq {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background-color: transparent;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var s = "s"
+        var mouseX = 0;
+        var mouseY = 0;
+        window.addEventListener("mousemove", (e) => {
+            mouseX = e.pageX;
+            mouseY = e.pageY;
+        });
+        function cv3pp() {
+            const Image = document.createElement("img");
+            if (s == "ef2S") {
+                Image.src = "ef2S.png";
+            }
+            Image.class = "a"
+            Image.style = "position: absolute;left: " + mouseX.toString() + "px;top: " + mouseY.toString() + "px;"
+            Image.height = 20;
+            Image.width = 20;
+            document.body.appendChild(Image);
+        }
+        function r7qwz() {
+            s = "ef2S";
+        }
+    </script>
+    <div onclick="cv3pp()" class="ujo1"></div>
+    <div id="t8g"></div>
+    <button type="button" class="g7aqq"><img src="ef2S.png" onclick="r7qwz()" width="30" , height="30"></button>
+</body>
+</html>
