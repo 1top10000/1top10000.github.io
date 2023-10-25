@@ -8,7 +8,7 @@ const allDelCookies = (domain, path) => {
   // const doc = document;
   domain = domain || document.domain;
   path = path || '/';
-  const cookies = document.cookie.split('; '); // 배열로 반환
+  const cookies = document.cookie.split('; ');
   console.log(cookies);
   const expiration = 'Sat, 01 Jan 1972 00:00:00 GMT';
   if (!document.cookie) {
@@ -33,9 +33,11 @@ fetch('https://raw.githubusercontent.com/1top10000/1top10000.github.io/main/dx.t
       dx = dx.substring(dx.indexOf('|b|')+3, dx.length-1);
       i++;
 }
+	    console.log(arr);
     for (let j = 0; j < arr.length; j++) {
   const a = document.createElement("li");
 a.innerHTML = arr[j];
+	    console.log(arr[j] + "**");
 document.querySelector("ol").appendChild(a);
 }
     })
