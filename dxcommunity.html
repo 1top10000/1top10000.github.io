@@ -15,7 +15,9 @@ fetch('https://raw.githubusercontent.com/1top10000/1top10000.github.io/main/dx.t
       i++;
 }
     for (let j = 0; j < arr.length; j++) {
-  document.querySelector("ol").innerHTML = arr[j]
+  const a = document.createElement("li");
+a.innerHTML = arr[j];
+document.querySelector("ol").appendChild(a);
 }
     })
 });
