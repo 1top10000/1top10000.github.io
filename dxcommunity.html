@@ -3,22 +3,25 @@
 </head>
 <body>
   <script>
-    var dx = "";
-    fetch('https://raw.githubusercontent.com/1top10000/1top10000.github.io/main/dx.txt').then(function(res){
+fetch('https://raw.githubusercontent.com/1top10000/1top10000.github.io/main/dx.txt').then(function(res){
     res.text().then(function(text){
-        dx = text;
-    })
-});
-    var arr = [];
+        var dx = "";
+        dx = text.replace("\n", '');
+            var arr = [];
     var i = 0;
     while (dx.indexOf('|b|') != -1) {
       arr[i] = dx.substring(0, dx.indexOf('|b|')-1);
       dx = dx.substring(dx.indexOf('|b|')+3, dx.length-1);
       i++;
 }
-    console.log(arr);
+    for (let j = 0; j < arr.length; j++) {
+  document.querySelector("ol").innerHTML = arr[j]
+}
+    })
+});
   </script>
 <h1>DX&7777 커뮤니티</h1>
 <a href="https://paraxeni-zoi.p-e.kr/">이상한생활 사이트</a><br>
+  <ol></ol>
 </body>
 </html>
