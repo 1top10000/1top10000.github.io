@@ -1,50 +1,67 @@
 <html>
 <head>
-<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <title>DX&7777커뮤니티</title>
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <style>
+        #g9x5 {
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        #d4ga {
+            width: 500px;
+            height: auto;
+            background-color: transparent;
+            border-style: solid none;
+            border-color: #505050;
+            border-width: 2px;
+            word-break: break-all;
+        }
+    </style>
 </head>
 <body>
-  <script>
-const allDelCookies = (domain, path) => {
-  // const doc = document;
-  domain = domain || document.domain;
-  path = path || '/';
-  const cookies = document.cookie.split('; ');
-  console.log(cookies);
-  const expiration = 'Sat, 01 Jan 1972 00:00:00 GMT';
-  if (!document.cookie) {
-  } else {
-    for (i = 0; i < cookies.length; i++) {
-      // const uname = cookies[i].split('=')[0];
-      // document.cookie = `${uname}=; expires=${expiration}`;
-      document.cookie = cookies[i].split('=')[0] + '=; expires=' + expiration;
-      // document.cookie = cookies[i].split('=')[0] + '=; expires=' + expiration + '; domain =' + domain;
-    }
-  }
-};
-	  allDelCookies();
-fetch('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt').then(function(res){
-    res.text().then(function(text){
-        var dx = "";
-        dx = text.replace("\n", '');
-            var arr = [];
-    var i = 0;
-    while (dx.indexOf('|b|') != -1) {
-      arr[i] = dx.substring(0, dx.indexOf('|b|'));
-      dx = dx.substring(dx.indexOf('|b|')+3, dx.length-1);
-      i++;
-}
-	    console.log(arr);
-    for (let j = 0; j < arr.length; j++) {
-  const a = document.createElement("li");
-a.innerHTML = arr[j];
-	    console.log(arr[j] + "**");
-document.querySelector("ol").appendChild(a);
-}
-    })
-});
-  </script>
-<h1>DX&7777 커뮤니티</h1>
-<a href="https://paraxeni-zoi.p-e.kr/">이상한생활 사이트</a><br>
-  <ol></ol>
+    <script>
+        gcaih('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt');
+        function gcaih(a) {
+            fetch(a).then(function (res) {
+                res.text().then(function (text) {
+                    var dx = "";
+                    dx = text.trim();
+                    var arr = dx.split('|b|');
+                    console.log(arr);
+                    for (let i = 0; i < arr.length; i++) {
+                        if (arr[i] != "") {
+                            console.log(arr[i]);
+                            const a = document.createElement("li");
+                            a.id = "g9x5"
+                            a.innerHTML = '<div id="d4ga">' + arr[i] + '</div>';
+                            document.querySelector("#p4gp").appendChild(a);
+                        }
+                    }
+                })
+            });
+        }
+        function mp() {
+            const e = document.createElement("p");
+            e.id = 'p4gp';
+            document.body.appendChild(e);
+        }
+        function F5() {
+            document.querySelector('#p4gp').remove();
+            const e = document.createElement("p");
+            e.id = 'p4gp';
+            document.body.appendChild(e);
+            gcaih('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt');
+        }
+    </script>
+    <h1>DX&7777 커뮤니티</h1>
+    <a href="https://paraxeni-zoi.p-e.kr/">이상한생활 사이트</a><br>
+    <button onclick="document.querySelector('#p4gp').remove();">지우기</button>
+    <button onclick="mp();">p만들기</button>
+    <button onclick="gcaih('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt');">불러오기</button>
+    <button onclick="F5();">F5</button>
+    <p id="p4gp"></p>
 </body>
 </html>
