@@ -4,12 +4,85 @@
     <meta http-equiv="Expires" content="-1" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Cache-Control" content="no-cache" />
+    <style>
+        #f3dq {
+            background-color: #cdcdcd;
+            height: 100px;
+            width: 100%;
+        }
+
+        #f23b {
+            background-color: #ccac25;
+            height: 100%;
+            width: 160px;
+        }
+
+        .fu29 {
+            height: auto;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #g3ff {
+            text-decoration: none;
+            color: black;
+        }
+
+            #g3ff:hover {
+                color: gray;
+            }
+
+        #f48p {
+            height: 100%;
+            width: 15%;
+            position: relative;
+            float: left;
+        }
+
+        #f49p {
+            height: 100%;
+            width: 15%;
+            float: left;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>이상한생활 사이트</h1>
-    <a href="https://paraxeni-zoi.p-e.kr/dxcommunity">DX&7777의 커뮤니티</a><br>
-    <a href="https://www.youtube.com/channel/UCqnox9fYvFSPuRiviUdmsxw" target="_blank">이상한생활 유튜브</a><br>
-    <a href="https://www.roblox.com/users/2462242289/profile" target="_blank">7777의 로블록스 프로필</a><br>
-    <a href="https://www.roblox.com/users/3118675533/profile" target="_blank">DX의 로블록스 프로필</a>
+    <div id="f3dq">
+        <div id="f48p">
+            <img src="a.png" class="fu29">
+        </div>
+        <div id="f49p" class="hf92"></div>
+        <div id="f49p" class="hf93">
+            <a href="https://www.youtube.com/channel/UCqnox9fYvFSPuRiviUdmsxw" target="_blank" id="g3ff">이상한생활<br>유튜브</a>
+        </div>
+        <div id="f49p" class="hf94">
+            <a href="https://www.roblox.com/users/2462242289/profile" target="_blank" id="g3ff">7777의<br>로블록스<br>프로필</a>
+        </div>
+        <div id="f49p" class="hf95">
+            <a href="https://www.roblox.com/users/3118675533/profile" target="_blank" id="g3ff">DX의<br>로블록스<br>프로필</a>
+        </div>
+    </div>
+    <div id="f23b"><a href="https://paraxeni-zoi.p-e.kr/dxcommunity">DX&7777의 커뮤니티</a></div>
+    <script>
+        window.addEventListener('resize', function () {
+            const x = window.innerWidth;
+            const y = window.innerHeight;
+            if (x < 700) {
+                document.querySelector(".hf92").style.display = "none";
+                document.querySelector(".hf93").style.display = "none";
+                document.querySelector(".hf94").style.display = "none";
+                document.querySelector(".hf95").style.display = "none";
+            } else {
+                document.querySelector(".hf92").style.display = "";
+                document.querySelector(".hf93").style.display = "";
+                document.querySelector(".hf94").style.display = "";
+                document.querySelector(".hf95").style.display = "";
+            }
+        });
+    </script>
 </body>
 </html>
