@@ -18,6 +18,12 @@
             border-color: #505050;
             border-width: 2px;
             word-break: break-all;
+            display: flex;
+            flex-direction: column;
+        }
+        #fh2g {
+            width: 130px;
+            height: auto;
         }
     </style>
 </head>
@@ -35,18 +41,25 @@
                         if (arr[i] != "") {
                             console.log(arr[i]);
                             const a = document.createElement("li");
-                            a.id = "g9x5"
-                            a.innerHTML = '<div id="d4ga">' + arr[i] + '</div>';
+                            const h = document.createElement("div");
+                            var d = arr[i].split('%$');
+                            a.id = "g9x5";
+                            h.id = "d4ga";
+                            h.innerHTML = d[0];
+                            a.appendChild(h);
                             document.querySelector("#p4gp").appendChild(a);
+                            if (d[1] != "") {
+                                const i = document.createElement("img");
+                                const p = document.createElement("p");
+                                i.id = "fh2g";
+                                i.src = d[1];
+                                p.appendChild(i);
+                                h.appendChild(p);
+                            }
                         }
                     }
                 })
             });
-        }
-        function mp() {
-            const e = document.createElement("p");
-            e.id = 'p4gp';
-            document.body.appendChild(e);
         }
         function F5() {
             document.querySelector('#p4gp').remove();
@@ -58,9 +71,6 @@
     </script>
     <h1>DX&7777 커뮤니티</h1>
     <a href="https://paraxeni-zoi.p-e.kr/">이상한생활 사이트</a><br>
-    <button onclick="document.querySelector('#p4gp').remove();">지우기</button>
-    <button onclick="mp();">p만들기</button>
-    <button onclick="gcaih('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt');">불러오기</button>
     <button onclick="F5();">F5</button>
     <p id="p4gp"></p>
 </body>
