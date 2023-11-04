@@ -23,9 +23,18 @@
             flex-direction: column;
             margin: 0 auto;
         }
+
         #fh2g {
             width: 130px;
             height: auto;
+        }
+        #i8fa {
+            color: #a1a1a1;
+            line-height: 50%;
+            text-indent: 20px;
+        }
+        #b3f9 {
+            text-indent: 8px;
         }
     </style>
 </head>
@@ -38,10 +47,8 @@
                     var dx = "";
                     dx = text.trim();
                     var arr = dx.split('|b|');
-                    console.log(arr);
                     for (let i = 0; i < arr.length; i++) {
                         if (arr[i] != "") {
-                            console.log(arr[i]);
                             const a = document.createElement("li");
                             const h = document.createElement("div");
                             var d = arr[i].split('%$');
@@ -49,11 +56,20 @@
                             h.id = "d4ga";
                             h.innerHTML = d[0];
                             a.appendChild(h);
+                            const x = document.createElement("p");
+                            x.id = "i8fa";
+                            if (d[2] != undefined && d[2] != "") {
+                                x.innerHTML = "@" + d[2];
+                            } else {
+                                x.innerHTML = "@익명";
+                            }
+                            h.prepend(x);
                             document.querySelector("#p4gp").appendChild(a);
                             if (d[1] != "") {
                                 const i = document.createElement("img");
                                 const p = document.createElement("p");
                                 i.id = "fh2g";
+                                p.id = "b3f9";
                                 i.src = d[1];
                                 p.appendChild(i);
                                 h.appendChild(p);
