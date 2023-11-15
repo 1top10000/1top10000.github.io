@@ -42,7 +42,7 @@
     <script>
         gcaih('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt');
         function gcaih(a) {
-            fetch(a, { cache: "no-store", cache-control: 	"max-age=0"}).then(function (res) {
+            fetch(a, { cache-control: 	"max-age=0"}).then(function (res) {
                 res.text().then(function (text) {
                     var dx = "";
                     dx = text.trim();
