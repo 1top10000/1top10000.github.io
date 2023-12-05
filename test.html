@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <script>
+        function f() {
+            const a = "e";
+            fetch('https://my-json-server.typicode.com/1top10000/dx/db', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({a})
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result);
+                })
+        }
+    </script>
+    <button onclick="f();">post</button>
+</body>
+</html>
