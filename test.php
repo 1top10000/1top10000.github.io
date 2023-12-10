@@ -1,3 +1,3 @@
 <?php
-ehco $_POST['d']
+echo $_POST['d']
 ?>
