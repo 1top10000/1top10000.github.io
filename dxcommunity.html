@@ -62,7 +62,7 @@
                 res.text().then(function (text) {
                     var dx = "";
                     dx = text.trim();
-                    var arr = JSON.parse(dx);
+                    var arr = JSON.parse(dx).reverse();
                     for (let i = 0; i < arr.length; i++) {
                         const a = document.createElement("li");
                         const h = document.createElement("div");
