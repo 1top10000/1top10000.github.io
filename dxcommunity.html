@@ -3,7 +3,7 @@
     <title>DX&7777커뮤니티</title>
     <meta http-equiv="Expires" content="-1" />
     <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         #g9x5 {
@@ -35,10 +35,6 @@
             text-indent: 20px;
         }
 
-        #b3f9 {
-            text-indent: 8px;
-        }
-
         #fs45 {
             text-indent: 12px;
             margin-block-start: -0.2em;
@@ -52,13 +48,31 @@
             margin-block-end: 0.4em;
             font-size: 0.9em;
         }
+
+        #fs94 {
+            overflow: auto;
+            background: #e2e2e2;
+            width: max-content;
+            height: auto;
+            border-radius: 10px;
+        }
+        #ff22 {
+            width: 270px;
+            height: auto;
+            border: 3px;
+            border-color: black;
+            border-style: solid;
+        }
     </style>
 </head>
 <body>
     <script>
         gcaih('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt');
         function gcaih(a) {
-            fetch(a, { cache: "no-store" }).then(function (res) {
+            fetch(a, {
+                'cache': "no-store",
+                'Cache-Control': "no-store"
+            }).then(function (res) {
                 res.text().then(function (text) {
                     var dx = "";
                     dx = text.trim();
@@ -92,7 +106,7 @@
                             const i = document.createElement("img");
                             const p = document.createElement("p");
                             i.id = "fh2g";
-                            p.id = "b3f9";
+                            p.style = "text-indent: 8px;";
                             i.src = d.i;
                             p.appendChild(i);
                             h.appendChild(p);
@@ -101,21 +115,38 @@
                 })
             });
         }
-        function F5() {
-            document.querySelector('#p4gp').remove();
-            const e = document.createElement("p");
-            e.id = 'p4gp';
-            document.body.appendChild(e);
-            gcaih('https://raw.githubusercontent.com/1top10000/dx/main/dx.txt');
-        }
         function ac() {
-            alert("다음에 추가.. (추가 느림)");
+            if (document.querySelector("#fs94").style.display == "none") {
+                document.querySelector("#fs94").style.display = "";
+            } else {
+                document.querySelector("#fs94").style.display = "none";
+            }
+        }
+        function qi() {
+            if (document.querySelector("#ff22").style.display == "none") {
+                document.querySelector("#ff22").style.display = "";
+            } else {
+                document.querySelector("#ff22").style.display = "none";
+            }
         }
     </script>
     <h1>DX&7777 커뮤니티</h1>
-    <a href="https://paraxeni-zoi.p-e.kr/">이상한생활 사이트</a><br>
-    <button onclick="F5();">F5</button>
-    <button onclick="ac();">글 작성</button>
+    <a href="https://paraxeni-zoi.p-e.kr/">이상한생활 사이트</a>
+    <h3>지금은 로딩이 느려 글을 작성하면 한참 후에 보입니다.</h3>
+    <h4>글이 없다고 같은 글을 한번에 많이 달지 말아주세요.</h4>
+    <h5>지금은 임시php 서버입니다.</h5>
+    <button onclick="ac();">글 작성</button><br>
+    <div id="fs94" style="display:none">
+        <form method="post" style="margin: 8px;" action="https://paraxeni-zoi.000webhostapp.com/" autocomplete="off">
+            글 이름(필수): <input name="h" type="text" /><br>
+            이름: <input name="c" type="text" /><br>
+            글(필수): <input name="b" type="text" /><br>
+            사진: 미완성<br>
+            <img style="width:1.2em; height:1.2em;" src="l.png" onclick="qi();" /> <br>
+            <input type="submit" value="확인" />
+        </form>
+    </div><br>
+    <img onclick="qi();" src="yfu8.png" id="ff22" style="display: none;" />
     <p id="p4gp"></p>
 </body>
 </html>
